@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.List;
+
 public class Node {
     private int number;
     private Color color;
@@ -6,6 +9,9 @@ public class Node {
         this.number = number;
         this.color = color;
     }
+
+
+
 
     public int getNumber() {
         return number;

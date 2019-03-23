@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class OuterGraph {
     private Map<String, InnerGraph> innerGraphMap;
@@ -215,5 +212,156 @@ public class OuterGraph {
         outerEdgeList.add(new OuterEdge(innerGraphH, innerGraphK));
     }
 
+    /**
+     * Find and print the route from one node to another
+     *
+     * @param startNode     The node to start from
+     * @param targetNode    The node to find
+     */
+    public void findRouteToNode(Node startNode, Node targetNode) {
+        Set<Node> visited = new HashSet<>();
+        LinkedList result = dfs(startNode, targetNode, visited);
+        System.out.println("It took " + result.size() + " steps to find the target planet.");
+    }
 
+    /**
+     * Do a depth-first search to find the target node
+     *
+     * @param startNode  The node we start from
+     * @param targetNode The node we're looking for
+     * @return A LinkedList of nodes representing the searched route
+     */
+    private LinkedList<Node> dfs(Node startNode, Node targetNode, Set<Node> visited) {
+        LinkedList<Node> solution = new LinkedList<Node>();
+        visited.add(startNode);
+
+        if (startNode.equals(targetNode)) {
+            // If the start node is also the node we're looking for
+            // Return an empty list of nodes since we did not travel to find the solution
+            solution = new LinkedList<Node>();
+//            solution.add(startNode);
+            return solution;
+        } else {
+            // If the start node is not the node we're looking for
+            List<Node> neighbors = getNeighbors(startNode);
+            for (Node neighbor : neighbors) {
+                if (!visited.contains(neighbor)) {
+                    solution = dfs(neighbor, targetNode, visited);
+
+                    if (solution.getLast().equals(targetNode)) {
+                        solution.addFirst(startNode);
+                        return solution;
+                    }
+                }
+            }
+        }
+
+        visited.remove(startNode);
+        return new LinkedList<Node>();
+    }
+
+    /**
+     * Find and return a list of neighboring nodes
+     *
+     * @param startNode The node to find neighbors for
+     * @return A list of neighboring nodes
+     */
+    private ArrayList<Node> getNeighbors(Node startNode) {
+        // Initialize variables
+        ArrayList<Node> neighbors = new ArrayList<>();
+        Map<String, InnerGraph> innerGraphs = getInnerGraphByNode(startNode);
+
+        for (InnerEdge innerEdge : getInnerEdgesByNode(startNode)) {
+            // Loop through all the InnerEdges
+
+            if (innerEdge.getNode1().equals(startNode)) {
+                // If node1 of innerEdge is the node we're looking for
+                // Save node1 of innerEdge as neighbor
+                neighbors.add(innerEdge.getNode2());
+            } else if (innerEdge.getNode2().equals(startNode)) {
+                // Same as above but now for node2
+                neighbors.add(innerEdge.getNode1());
+            }
+        }
+
+        for (OuterEdge outerEdge : outerEdgeList) {
+            // Loop through all the OuterEdges
+
+            if (innerGraphs.containsValue(outerEdge.getGraph1())) {
+                // If graph1 of OuterGraph is the graph containing the node
+                neighbors.add(outerEdge.getGraph1().getNodeByNumber(startNode.getNumber()));
+//                innerGraphs.remove(outerEdge.getGraph1());
+            } else if (innerGraphs.containsValue(outerEdge.getGraph2())) {
+                // Same as above but now for graph2
+                neighbors.add(outerEdge.getGraph2().getNodeByNumber(startNode.getNumber()));
+            }
+        }
+        return neighbors;
+    }
+
+    /**
+     * Get all InnerGraphs where the specified node is mentioned
+     *
+     * @param startNode The node to look for
+     * @return A Map of InnerGraphs
+     */
+    private Map<String, InnerGraph> getInnerGraphByNode(Node startNode) {
+        Map<String, InnerGraph> innerGraphMap = new HashMap<>();
+        int startNodeNumber = startNode.getNumber();
+        Color startNodeColor = startNode.getColor();
+
+        for (Map.Entry<String, InnerGraph> item : getInnerGraphMap().entrySet()) {
+            // Loop through the map of InnerGraphs
+
+            // Keep searching in each InnerGraph unless we confirmed we need it or we're through it
+            boolean keepSearching = true;
+
+            for (InnerEdge innerEdge : item.getValue().getInnerEdgeList()) {
+                // Loop through the innerEdges in the current InnerGraph
+
+                if (innerEdge.getNode1().getNumber() == startNodeNumber && innerEdge.getNode1().getColor().equals(startNodeColor)) {
+                    // If innerEdge's node1 is the node we're looking for
+                    // Add the current InnerGraph to the innerGraphMap
+                    innerGraphMap.put(item.getKey(), item.getValue());
+
+                    // Stop searching because we've confirmed we need this innerGraph
+                    keepSearching = false;
+                } else if (innerEdge.getNode2().getNumber() == startNodeNumber && innerEdge.getNode2().getColor().equals(startNodeColor)) {
+                    // Do the same as above but for node2
+                    innerGraphMap.put(item.getKey(), item.getValue());
+                    keepSearching = false;
+                }
+            }
+        }
+        return innerGraphMap;
+    }
+
+    /**
+     * Get a list of InnerEdges containing the specified Node
+     *
+     * @param nodeToFind The node to find InnerEdges for
+     * @return ArrayList of type InnerEdge
+     */
+    private ArrayList<InnerEdge> getInnerEdgesByNode(Node nodeToFind) {
+        ArrayList<InnerEdge> innerEdges = new ArrayList<>();
+
+        for (Map.Entry<String, InnerGraph> item : innerGraphMap.entrySet()) {
+            for (InnerEdge innerEdge : item.getValue().getInnerEdgeList()) {
+                if (innerEdge.getNode1().equals(nodeToFind)) {
+                    innerEdges.add(innerEdge);
+                } else if (innerEdge.getNode2().equals(nodeToFind)) {
+                    innerEdges.add(innerEdge);
+                }
+            }
+        }
+        return innerEdges;
+    }
+
+    public Map<String, InnerGraph> getInnerGraphMap() {
+        return innerGraphMap;
+    }
+
+    public List<OuterEdge> getOuterEdgeList() {
+        return outerEdgeList;
+    }
 }
