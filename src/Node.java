@@ -1,6 +1,3 @@
-import java.util.LinkedList;
-import java.util.List;
-
 public class Node {
     private int number;
     private Color color;
@@ -9,11 +6,8 @@ public class Node {
     public Node(int number, Color color, InnerGraph innerGraph) {
         this.number = number;
         this.color = color;
-        this.innerGraph = innerGraph; // For debugging purposes
+        this.innerGraph = innerGraph;
     }
-
-
-
 
     public int getNumber() {
         return number;

@@ -31,7 +31,6 @@ public class InnerGraph {
                 innerEdgesForNode.add(innerEdge);
             }
         }
-
         return innerEdgesForNode;
     }
 
