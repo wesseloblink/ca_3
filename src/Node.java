@@ -4,10 +4,12 @@ import java.util.List;
 public class Node {
     private int number;
     private Color color;
+    private InnerGraph innerGraph;
 
-    public Node(int number, Color color) {
+    public Node(int number, Color color, InnerGraph innerGraph) {
         this.number = number;
         this.color = color;
+        this.innerGraph = innerGraph; // For debugging purposes
     }
 
 
@@ -19,5 +21,9 @@ public class Node {
 
     public Color getColor() {
         return color;
+    }
+
+    public InnerGraph getInnerGraph() {
+        return innerGraph;
     }
 }

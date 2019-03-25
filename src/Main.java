@@ -8,8 +8,8 @@ public class Main {
         starsystem.getInnerGraphMap().get("A").getNodeByNumber(1);
         starsystem.getInnerGraphMap().get("A").getNodeByNumber(2);
 
-        starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("D").getNodeByNumber(7),
-                starsystem.getInnerGraphMap().get("D").getNodeByNumber(8));
+        starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("K").getNodeByNumber(2),
+                starsystem.getInnerGraphMap().get("D").getNodeByNumber(3));
 
     }
 }

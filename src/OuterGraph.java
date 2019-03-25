@@ -22,103 +22,103 @@ public class OuterGraph {
 
         // Add inner graph nodes
         // A
-        innerGraphA.addNode(new Node(1, Color.RED));
-        innerGraphA.addNode(new Node(2, Color.BLUE));
-        innerGraphA.addNode(new Node(3, Color.YELLOW));
-        innerGraphA.addNode(new Node(4, Color.RED));
-        innerGraphA.addNode(new Node(5, Color.RED));
-        innerGraphA.addNode(new Node(6, Color.YELLOW));
-        innerGraphA.addNode(new Node(7, Color.RED));
-        innerGraphA.addNode(new Node(8, Color.RED));
-        innerGraphA.addNode(new Node(9, Color.YELLOW));
+        innerGraphA.addNode(new Node(1, Color.RED, innerGraphA));
+        innerGraphA.addNode(new Node(2, Color.BLUE, innerGraphA));
+        innerGraphA.addNode(new Node(3, Color.YELLOW, innerGraphA));
+        innerGraphA.addNode(new Node(4, Color.RED, innerGraphA));
+        innerGraphA.addNode(new Node(5, Color.RED, innerGraphA));
+        innerGraphA.addNode(new Node(6, Color.YELLOW, innerGraphA));
+        innerGraphA.addNode(new Node(7, Color.RED, innerGraphA));
+        innerGraphA.addNode(new Node(8, Color.RED, innerGraphA));
+        innerGraphA.addNode(new Node(9, Color.YELLOW, innerGraphA));
 
         // B
-        innerGraphB.addNode(new Node(1, Color.RED));
-        innerGraphB.addNode(new Node(2, Color.RED));
-        innerGraphB.addNode(new Node(3, Color.YELLOW));
-        innerGraphB.addNode(new Node(4, Color.YELLOW));
-        innerGraphB.addNode(new Node(5, Color.RED));
-        innerGraphB.addNode(new Node(6, Color.RED));
-        innerGraphB.addNode(new Node(7, Color.BLUE));
-        innerGraphB.addNode(new Node(8, Color.RED));
-        innerGraphB.addNode(new Node(9, Color.GREEN));
+        innerGraphB.addNode(new Node(1, Color.RED, innerGraphB));
+        innerGraphB.addNode(new Node(2, Color.RED, innerGraphB));
+        innerGraphB.addNode(new Node(3, Color.YELLOW, innerGraphB));
+        innerGraphB.addNode(new Node(4, Color.YELLOW, innerGraphB));
+        innerGraphB.addNode(new Node(5, Color.RED, innerGraphB));
+        innerGraphB.addNode(new Node(6, Color.RED, innerGraphB));
+        innerGraphB.addNode(new Node(7, Color.BLUE, innerGraphB));
+        innerGraphB.addNode(new Node(8, Color.RED, innerGraphB));
+        innerGraphB.addNode(new Node(9, Color.GREEN, innerGraphB));
 
         // C
-        innerGraphC.addNode(new Node(1, Color.RED));
-        innerGraphC.addNode(new Node(2, Color.RED));
-        innerGraphC.addNode(new Node(3, Color.BLUE));
-        innerGraphC.addNode(new Node(4, Color.RED));
-        innerGraphC.addNode(new Node(5, Color.GREEN));
-        innerGraphC.addNode(new Node(6, Color.BLUE));
-        innerGraphC.addNode(new Node(7, Color.RED));
-        innerGraphC.addNode(new Node(8, Color.GREEN));
-        innerGraphC.addNode(new Node(9, Color.YELLOW));
+        innerGraphC.addNode(new Node(1, Color.RED, innerGraphC));
+        innerGraphC.addNode(new Node(2, Color.RED, innerGraphC));
+        innerGraphC.addNode(new Node(3, Color.BLUE, innerGraphC));
+        innerGraphC.addNode(new Node(4, Color.RED, innerGraphC));
+        innerGraphC.addNode(new Node(5, Color.GREEN, innerGraphC));
+        innerGraphC.addNode(new Node(6, Color.BLUE, innerGraphC));
+        innerGraphC.addNode(new Node(7, Color.RED, innerGraphC));
+        innerGraphC.addNode(new Node(8, Color.GREEN, innerGraphC));
+        innerGraphC.addNode(new Node(9, Color.YELLOW, innerGraphC));
 
         // D
-        innerGraphD.addNode(new Node(1, Color.BLUE));
-        innerGraphD.addNode(new Node(2, Color.BLUE));
-        innerGraphD.addNode(new Node(3, Color.BLUE));
-        innerGraphD.addNode(new Node(4, Color.BLUE));
-        innerGraphD.addNode(new Node(5, Color.BLUE));
-        innerGraphD.addNode(new Node(6, Color.BLUE));
-        innerGraphD.addNode(new Node(7, Color.RED));
-        innerGraphD.addNode(new Node(8, Color.RED));
-        innerGraphD.addNode(new Node(9, Color.YELLOW));
+        innerGraphD.addNode(new Node(1, Color.BLUE, innerGraphD));
+        innerGraphD.addNode(new Node(2, Color.BLUE, innerGraphD));
+        innerGraphD.addNode(new Node(3, Color.BLUE, innerGraphD));
+        innerGraphD.addNode(new Node(4, Color.BLUE, innerGraphD));
+        innerGraphD.addNode(new Node(5, Color.BLUE, innerGraphD));
+        innerGraphD.addNode(new Node(6, Color.BLUE, innerGraphD));
+        innerGraphD.addNode(new Node(7, Color.RED, innerGraphD));
+        innerGraphD.addNode(new Node(8, Color.RED, innerGraphD));
+        innerGraphD.addNode(new Node(9, Color.YELLOW, innerGraphD));
 
         // E
-        innerGraphE.addNode(new Node(1, Color.GREEN));
-        innerGraphE.addNode(new Node(2, Color.GREEN));
-        innerGraphE.addNode(new Node(3, Color.BLUE));
-        innerGraphE.addNode(new Node(4, Color.RED));
-        innerGraphE.addNode(new Node(5, Color.YELLOW));
-        innerGraphE.addNode(new Node(6, Color.YELLOW));
-        innerGraphE.addNode(new Node(7, Color.GREEN));
-        innerGraphE.addNode(new Node(8, Color.GREEN));
-        innerGraphE.addNode(new Node(9, Color.YELLOW));
+        innerGraphE.addNode(new Node(1, Color.GREEN, innerGraphE));
+        innerGraphE.addNode(new Node(2, Color.GREEN, innerGraphE));
+        innerGraphE.addNode(new Node(3, Color.BLUE, innerGraphE));
+        innerGraphE.addNode(new Node(4, Color.RED, innerGraphE));
+        innerGraphE.addNode(new Node(5, Color.YELLOW, innerGraphE));
+        innerGraphE.addNode(new Node(6, Color.YELLOW, innerGraphE));
+        innerGraphE.addNode(new Node(7, Color.GREEN, innerGraphE));
+        innerGraphE.addNode(new Node(8, Color.GREEN, innerGraphE));
+        innerGraphE.addNode(new Node(9, Color.YELLOW, innerGraphE));
 
         // F
-        innerGraphF.addNode(new Node(1, Color.BLUE));
-        innerGraphF.addNode(new Node(2, Color.BLUE));
-        innerGraphF.addNode(new Node(3, Color.GREEN));
-        innerGraphF.addNode(new Node(4, Color.RED));
-        innerGraphF.addNode(new Node(5, Color.GREEN));
-        innerGraphF.addNode(new Node(6, Color.GREEN));
-        innerGraphF.addNode(new Node(7, Color.BLUE));
-        innerGraphF.addNode(new Node(8, Color.GREEN));
-        innerGraphF.addNode(new Node(9, Color.GREEN));
+        innerGraphF.addNode(new Node(1, Color.BLUE, innerGraphF));
+        innerGraphF.addNode(new Node(2, Color.BLUE, innerGraphF));
+        innerGraphF.addNode(new Node(3, Color.GREEN, innerGraphF));
+        innerGraphF.addNode(new Node(4, Color.RED, innerGraphF));
+        innerGraphF.addNode(new Node(5, Color.GREEN, innerGraphF));
+        innerGraphF.addNode(new Node(6, Color.GREEN, innerGraphF));
+        innerGraphF.addNode(new Node(7, Color.BLUE, innerGraphF));
+        innerGraphF.addNode(new Node(8, Color.GREEN, innerGraphF));
+        innerGraphF.addNode(new Node(9, Color.GREEN, innerGraphF));
 
         // G
-        innerGraphG.addNode(new Node(1, Color.GREEN));
-        innerGraphG.addNode(new Node(2, Color.GREEN));
-        innerGraphG.addNode(new Node(3, Color.GREEN));
-        innerGraphG.addNode(new Node(4, Color.GREEN));
-        innerGraphG.addNode(new Node(5, Color.YELLOW));
-        innerGraphG.addNode(new Node(6, Color.GREEN));
-        innerGraphG.addNode(new Node(7, Color.GREEN));
-        innerGraphG.addNode(new Node(8, Color.YELLOW));
-        innerGraphG.addNode(new Node(9, Color.YELLOW));
+        innerGraphG.addNode(new Node(1, Color.GREEN, innerGraphG));
+        innerGraphG.addNode(new Node(2, Color.GREEN, innerGraphG));
+        innerGraphG.addNode(new Node(3, Color.GREEN, innerGraphG));
+        innerGraphG.addNode(new Node(4, Color.GREEN, innerGraphG));
+        innerGraphG.addNode(new Node(5, Color.YELLOW, innerGraphG));
+        innerGraphG.addNode(new Node(6, Color.GREEN, innerGraphG));
+        innerGraphG.addNode(new Node(7, Color.GREEN, innerGraphG));
+        innerGraphG.addNode(new Node(8, Color.YELLOW, innerGraphG));
+        innerGraphG.addNode(new Node(9, Color.YELLOW, innerGraphG));
 
         // H
-        innerGraphH.addNode(new Node(1, Color.YELLOW));
-        innerGraphH.addNode(new Node(2, Color.YELLOW));
-        innerGraphH.addNode(new Node(3, Color.YELLOW));
-        innerGraphH.addNode(new Node(4, Color.YELLOW));
-        innerGraphH.addNode(new Node(5, Color.GREEN));
-        innerGraphH.addNode(new Node(6, Color.GREEN));
-        innerGraphH.addNode(new Node(7, Color.YELLOW));
-        innerGraphH.addNode(new Node(8, Color.YELLOW));
-        innerGraphH.addNode(new Node(9, Color.BLUE));
+        innerGraphH.addNode(new Node(1, Color.YELLOW, innerGraphH));
+        innerGraphH.addNode(new Node(2, Color.YELLOW, innerGraphH));
+        innerGraphH.addNode(new Node(3, Color.YELLOW, innerGraphH));
+        innerGraphH.addNode(new Node(4, Color.YELLOW, innerGraphH));
+        innerGraphH.addNode(new Node(5, Color.GREEN, innerGraphH));
+        innerGraphH.addNode(new Node(6, Color.GREEN, innerGraphH));
+        innerGraphH.addNode(new Node(7, Color.YELLOW, innerGraphH));
+        innerGraphH.addNode(new Node(8, Color.YELLOW, innerGraphH));
+        innerGraphH.addNode(new Node(9, Color.BLUE, innerGraphH));
 
         // K
-        innerGraphK.addNode(new Node(1, Color.YELLOW));
-        innerGraphK.addNode(new Node(2, Color.RED));
-        innerGraphK.addNode(new Node(3, Color.YELLOW));
-        innerGraphK.addNode(new Node(4, Color.YELLOW));
-        innerGraphK.addNode(new Node(5, Color.GREEN));
-        innerGraphK.addNode(new Node(6, Color.RED));
-        innerGraphK.addNode(new Node(7, Color.YELLOW));
-        innerGraphK.addNode(new Node(8, Color.BLUE));
-        innerGraphK.addNode(new Node(9, Color.RED));
+        innerGraphK.addNode(new Node(1, Color.YELLOW, innerGraphK));
+        innerGraphK.addNode(new Node(2, Color.RED, innerGraphK));
+        innerGraphK.addNode(new Node(3, Color.YELLOW, innerGraphK));
+        innerGraphK.addNode(new Node(4, Color.YELLOW, innerGraphK));
+        innerGraphK.addNode(new Node(5, Color.GREEN, innerGraphK));
+        innerGraphK.addNode(new Node(6, Color.RED, innerGraphK));
+        innerGraphK.addNode(new Node(7, Color.YELLOW, innerGraphK));
+        innerGraphK.addNode(new Node(8, Color.BLUE, innerGraphK));
+        innerGraphK.addNode(new Node(9, Color.RED, innerGraphK));
 
         // Add inner graph edges
         // A
@@ -220,8 +220,12 @@ public class OuterGraph {
      */
     public void findRouteToNode(Node startNode, Node targetNode) {
         Set<Node> visited = new HashSet<>();
-        LinkedList result = dfs(startNode, targetNode, visited);
+        LinkedList<Node> result = dfs(startNode, targetNode, visited);
         System.out.println("It took " + result.size() + " steps to find the target planet.");
+        System.out.println("Path walked:");
+        for(Node node : result) {
+            System.out.println(node.getInnerGraph().getName() + node.getNumber());
+        }
     }
 
     /**
@@ -232,14 +236,14 @@ public class OuterGraph {
      * @return A LinkedList of nodes representing the searched route
      */
     private LinkedList<Node> dfs(Node startNode, Node targetNode, Set<Node> visited) {
-        LinkedList<Node> solution = new LinkedList<Node>();
+        LinkedList<Node> solution;
         visited.add(startNode);
 
         if (startNode.equals(targetNode)) {
             // If the start node is also the node we're looking for
             // Return an empty list of nodes since we did not travel to find the solution
             solution = new LinkedList<Node>();
-//            solution.add(startNode);
+            solution.add(startNode);
             return solution;
         } else {
             // If the start node is not the node we're looking for
@@ -248,16 +252,22 @@ public class OuterGraph {
                 if (!visited.contains(neighbor)) {
                     solution = dfs(neighbor, targetNode, visited);
 
-                    if (solution.getLast().equals(targetNode)) {
-                        solution.addFirst(startNode);
+                    if (solution.size() > 0) {
+                        // If solution is not empty
+//                        solution.addFirst(startNode);
+                        solution.addLast(startNode);
                         return solution;
                     }
+//                    if (solution.getLast().equals(targetNode)) {
+//                        solution.addFirst(startNode);
+//                        return solution;
+//                    }
                 }
             }
         }
 
         visited.remove(startNode);
-        return new LinkedList<Node>();
+        return new LinkedList<>();
     }
 
     /**
@@ -287,14 +297,80 @@ public class OuterGraph {
         for (OuterEdge outerEdge : outerEdgeList) {
             // Loop through all the OuterEdges
 
-            if (innerGraphs.containsValue(outerEdge.getGraph1())) {
-                // If graph1 of OuterGraph is the graph containing the node
-                neighbors.add(outerEdge.getGraph1().getNodeByNumber(startNode.getNumber()));
-//                innerGraphs.remove(outerEdge.getGraph1());
-            } else if (innerGraphs.containsValue(outerEdge.getGraph2())) {
-                // Same as above but now for graph2
-                neighbors.add(outerEdge.getGraph2().getNodeByNumber(startNode.getNumber()));
+            boolean canAdd = true;
+
+            if (innerGraphs.containsValue(outerEdge.getGraph1()) || innerGraphs.containsValue(outerEdge.getGraph2())) {
+                // Graph1 (A)
+                if (outerEdge.getGraph1().getName().equals(startNode.getInnerGraph().getName())) {
+                    // If it's A
+                    Node potentionalNeighbor = outerEdge.getGraph2().getNodeByNumber(startNode.getNumber());
+
+                    if(potentionalNeighbor.getColor().equals(startNode.getColor())) {
+                        neighbors.add(potentionalNeighbor);
+                    }
+                } else {
+                    Node potentionalNeighbor = outerEdge.getGraph1().getNodeByNumber(startNode.getNumber());
+
+                    if(potentionalNeighbor.getColor().equals(startNode.getColor())) {
+                        neighbors.add(potentionalNeighbor);
+                    }
+
+                }
+
+
+                // Graph2 (D)
+
+
+
             }
+
+
+
+//            if (innerGraphs.containsValue(outerEdge.getGraph1())) {
+//                // Als innergraphs graph1 van outeredge bevat
+//
+//                // Save potentional neighbor
+//                Node potentionalNeighbor = outerEdge.getGraph1().getNodeByNumber(startNode.getNumber());
+//
+//                for (Node node : neighbors) {
+//                    if(node.equals(potentionalNeighbor)) {
+//                        canAdd = false;
+//                    }
+//                }
+//
+//                if (potentionalNeighbor.getColor().equals(startNode.getColor()) && canAdd) {
+//                    // Als graph1 een identieke node bevat
+//                    // Sla deze dan op als neighbor
+//                    neighbors.add(potentionalNeighbor);
+//                }
+//            } if (innerGraphs.containsValue(outerEdge.getGraph2())) {
+//                // If innergraphs contains graph2 of outeredge
+//
+//                // Save potentional neighbor
+//                Node potentionalNeighbor = outerEdge.getGraph2().getNodeByNumber(startNode.getNumber());
+//
+//                for (Node node : neighbors) {
+//                    if(node.equals(potentionalNeighbor)) {
+//                        canAdd = false;
+//                    }
+//                }
+//
+//                if(potentionalNeighbor.getColor().equals(startNode.getColor()) && canAdd) {
+//                    // If graph2 contains an identical node
+//                    // Add this node as neighbor
+//                    neighbors.add(potentionalNeighbor);
+//                }
+//            }
+
+//            if (innerGraphs.containsValue(outerEdge.getGraph1())) {
+//                // If graph1 of OuterGraph is the graph containing the startnode
+//                // Add graph2 node to neighbors
+//                neighbors.add(outerEdge.getGraph1().getNodeByNumber(startNode.getNumber()));
+////                innerGraphs.remove(outerEdge.getGraph1());
+//            } else if (innerGraphs.containsValue(outerEdge.getGraph2())) {
+//                // Same as above but now for graph2
+//                neighbors.add(outerEdge.getGraph2().getNodeByNumber(startNode.getNumber()));
+//            }
         }
         return neighbors;
     }
