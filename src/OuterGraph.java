@@ -215,15 +215,15 @@ public class OuterGraph {
     /**
      * Find and print the route from one node to another
      *
-     * @param startNode     The node to start from
-     * @param targetNode    The node to find
+     * @param startNode  The node to start from
+     * @param targetNode The node to find
      */
     public void findRouteToNode(Node startNode, Node targetNode) {
         Set<Node> visited = new HashSet<>();
         LinkedList<Node> result = dfs(startNode, targetNode, visited);
         System.out.println("It took " + result.size() + " steps to find the target planet.");
         System.out.println("Path walked:");
-        for(Node node : result) {
+        for (Node node : result) {
             System.out.println(node.getInnerGraph().getName() + node.getNumber());
         }
     }
@@ -247,21 +247,16 @@ public class OuterGraph {
             return solution;
         } else {
             // If the start node is not the node we're looking for
-            List<Node> neighbors = getNeighbors(startNode);
+            List<Node> neighbors = getNeighbors(startNode, targetNode);
             for (Node neighbor : neighbors) {
                 if (!visited.contains(neighbor)) {
                     solution = dfs(neighbor, targetNode, visited);
 
                     if (solution.size() > 0) {
                         // If solution is not empty
-//                        solution.addFirst(startNode);
                         solution.addLast(startNode);
                         return solution;
                     }
-//                    if (solution.getLast().equals(targetNode)) {
-//                        solution.addFirst(startNode);
-//                        return solution;
-//                    }
                 }
             }
         }
@@ -276,7 +271,7 @@ public class OuterGraph {
      * @param startNode The node to find neighbors for
      * @return A list of neighboring nodes
      */
-    private ArrayList<Node> getNeighbors(Node startNode) {
+    private ArrayList<Node> getNeighbors(Node startNode, Node targetNode) {
         // Initialize variables
         ArrayList<Node> neighbors = new ArrayList<>();
         Map<String, InnerGraph> innerGraphs = getInnerGraphByNode(startNode);
@@ -296,81 +291,32 @@ public class OuterGraph {
 
         for (OuterEdge outerEdge : outerEdgeList) {
             // Loop through all the OuterEdges
-
-            boolean canAdd = true;
-
             if (innerGraphs.containsValue(outerEdge.getGraph1()) || innerGraphs.containsValue(outerEdge.getGraph2())) {
-                // Graph1 (A)
+                // If either of the graphs is one of our InnerGraphs
                 if (outerEdge.getGraph1().getName().equals(startNode.getInnerGraph().getName())) {
-                    // If it's A
+                    // If graph1 is the graph containing our startNode
+                    // Get graph2's node with the same number as startNode
                     Node potentionalNeighbor = outerEdge.getGraph2().getNodeByNumber(startNode.getNumber());
 
-                    if(potentionalNeighbor.getColor().equals(startNode.getColor())) {
+                    if (potentionalNeighbor.getColor().equals(startNode.getColor())) {
+                        // If the potentional neighbor has the same number and color as startNode
                         neighbors.add(potentionalNeighbor);
                     }
-                } else {
+                } else if (outerEdge.getGraph2().getName().equals(startNode.getInnerGraph().getName())) {
+                    // The same as above but for graph2 instead
                     Node potentionalNeighbor = outerEdge.getGraph1().getNodeByNumber(startNode.getNumber());
 
-                    if(potentionalNeighbor.getColor().equals(startNode.getColor())) {
+                    if (potentionalNeighbor.getColor().equals(startNode.getColor())) {
                         neighbors.add(potentionalNeighbor);
                     }
-
                 }
-
-
-                // Graph2 (D)
-
-
-
             }
+        }
 
-
-
-//            if (innerGraphs.containsValue(outerEdge.getGraph1())) {
-//                // Als innergraphs graph1 van outeredge bevat
-//
-//                // Save potentional neighbor
-//                Node potentionalNeighbor = outerEdge.getGraph1().getNodeByNumber(startNode.getNumber());
-//
-//                for (Node node : neighbors) {
-//                    if(node.equals(potentionalNeighbor)) {
-//                        canAdd = false;
-//                    }
-//                }
-//
-//                if (potentionalNeighbor.getColor().equals(startNode.getColor()) && canAdd) {
-//                    // Als graph1 een identieke node bevat
-//                    // Sla deze dan op als neighbor
-//                    neighbors.add(potentionalNeighbor);
-//                }
-//            } if (innerGraphs.containsValue(outerEdge.getGraph2())) {
-//                // If innergraphs contains graph2 of outeredge
-//
-//                // Save potentional neighbor
-//                Node potentionalNeighbor = outerEdge.getGraph2().getNodeByNumber(startNode.getNumber());
-//
-//                for (Node node : neighbors) {
-//                    if(node.equals(potentionalNeighbor)) {
-//                        canAdd = false;
-//                    }
-//                }
-//
-//                if(potentionalNeighbor.getColor().equals(startNode.getColor()) && canAdd) {
-//                    // If graph2 contains an identical node
-//                    // Add this node as neighbor
-//                    neighbors.add(potentionalNeighbor);
-//                }
-//            }
-
-//            if (innerGraphs.containsValue(outerEdge.getGraph1())) {
-//                // If graph1 of OuterGraph is the graph containing the startnode
-//                // Add graph2 node to neighbors
-//                neighbors.add(outerEdge.getGraph1().getNodeByNumber(startNode.getNumber()));
-////                innerGraphs.remove(outerEdge.getGraph1());
-//            } else if (innerGraphs.containsValue(outerEdge.getGraph2())) {
-//                // Same as above but now for graph2
-//                neighbors.add(outerEdge.getGraph2().getNodeByNumber(startNode.getNumber()));
-//            }
+        if (neighbors.contains(targetNode)) {
+            ArrayList<Node> finalNeighbors = new ArrayList<>();
+            finalNeighbors.add(targetNode);
+            return finalNeighbors;
         }
         return neighbors;
     }
@@ -386,30 +332,39 @@ public class OuterGraph {
         int startNodeNumber = startNode.getNumber();
         Color startNodeColor = startNode.getColor();
 
-        for (Map.Entry<String, InnerGraph> item : getInnerGraphMap().entrySet()) {
-            // Loop through the map of InnerGraphs
+        InnerGraph startGraph = startNode.getInnerGraph();
+        List<InnerGraph> connectedGraphs = getConnectedGraphs(startGraph);
+
+        for (InnerGraph innerGraph : connectedGraphs) {
+            // Loop through the list of InnerGraphs
 
             // Keep searching in each InnerGraph unless we confirmed we need it or we're through it
             boolean keepSearching = true;
 
-            for (InnerEdge innerEdge : item.getValue().getInnerEdgeList()) {
-                // Loop through the innerEdges in the current InnerGraph
-
-                if (innerEdge.getNode1().getNumber() == startNodeNumber && innerEdge.getNode1().getColor().equals(startNodeColor)) {
-                    // If innerEdge's node1 is the node we're looking for
-                    // Add the current InnerGraph to the innerGraphMap
-                    innerGraphMap.put(item.getKey(), item.getValue());
-
-                    // Stop searching because we've confirmed we need this innerGraph
-                    keepSearching = false;
-                } else if (innerEdge.getNode2().getNumber() == startNodeNumber && innerEdge.getNode2().getColor().equals(startNodeColor)) {
-                    // Do the same as above but for node2
-                    innerGraphMap.put(item.getKey(), item.getValue());
-                    keepSearching = false;
-                }
+            if (innerGraph.getNodeByNumber(startNodeNumber).getColor().equals(startNodeColor)) {
+                innerGraphMap.put(innerGraph.getName(), innerGraph);
             }
         }
         return innerGraphMap;
+    }
+
+    /**
+     * Method to return connected InnerGraphs compared to current InnerGraph
+     *
+     * @param startGraph InnerGraph to compare with
+     * @return List of connected InnerGraphs
+     */
+    private List<InnerGraph> getConnectedGraphs(InnerGraph startGraph) {
+        List<InnerGraph> innerGraphs = new ArrayList<>();
+
+        for (OuterEdge outerEdge : outerEdgeList) {
+            if (outerEdge.getGraph1().equals(startGraph)) {
+                innerGraphs.add(outerEdge.getGraph2());
+            } else if (outerEdge.getGraph2().equals(startGraph)) {
+                innerGraphs.add(outerEdge.getGraph1());
+            }
+        }
+        return innerGraphs;
     }
 
     /**

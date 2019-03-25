@@ -5,11 +5,13 @@ public class Main {
         // Set up universe
         OuterGraph starsystem = new OuterGraph();
 
-        starsystem.getInnerGraphMap().get("A").getNodeByNumber(1);
-        starsystem.getInnerGraphMap().get("A").getNodeByNumber(2);
+        starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("F").getNodeByNumber(6),
+                starsystem.getInnerGraphMap().get("C").getNodeByNumber(1));
 
-        starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("K").getNodeByNumber(2),
-                starsystem.getInnerGraphMap().get("D").getNodeByNumber(3));
+        starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("D").getNodeByNumber(7),
+                starsystem.getInnerGraphMap().get("D").getNodeByNumber(8));
 
+        starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("K").getNodeByNumber(3),
+                starsystem.getInnerGraphMap().get("A").getNodeByNumber(3));
     }
 }
