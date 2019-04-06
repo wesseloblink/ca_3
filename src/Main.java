@@ -4,6 +4,9 @@ public class Main {
         // Set up universe
         OuterGraph starsystem = new OuterGraph();
 
+        starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("A").getNodeByNumber(1),
+                starsystem.getInnerGraphMap().get("A").getNodeByNumber(1));
+
         starsystem.findRouteToNode(starsystem.getInnerGraphMap().get("F").getNodeByNumber(6),
                 starsystem.getInnerGraphMap().get("C").getNodeByNumber(1));
 

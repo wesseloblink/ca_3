@@ -1,0 +1,618 @@
+{
+  "solarsystems": [
+    {
+      "name": "A",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "RED"
+        },
+        {
+          "number": 2,
+          "color": "BLUE"
+        },
+        {
+          "number": 3,
+          "color": "YELLOW"
+        },
+        {
+          "number": 4,
+          "color": "RED"
+        },
+        {
+          "number": 5,
+          "color": "RED"
+        },
+        {
+          "number": 6,
+          "color": "YELLOW"
+        },
+        {
+          "number": 7,
+          "color": "RED"
+        },
+        {
+          "number": 8,
+          "color": "RED"
+        },
+        {
+          "number": 9,
+          "color": "YELLOW"
+        }
+      ]
+    },
+    {
+      "name": "B",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "RED"
+        },
+        {
+          "number": 2,
+          "color": "RED"
+        },
+        {
+          "number": 3,
+          "color": "YELLOW"
+        },
+        {
+          "number": 4,
+          "color": "YELLOW"
+        },
+        {
+          "number": 5,
+          "color": "RED"
+        },
+        {
+          "number": 6,
+          "color": "RED"
+        },
+        {
+          "number": 7,
+          "color": "BLUE"
+        },
+        {
+          "number": 8,
+          "color": "RED"
+        },
+        {
+          "number": 9,
+          "color": "GREEN"
+        }
+      ]
+    },
+    {
+      "name": "C",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "RED"
+        },
+        {
+          "number": 2,
+          "color": "RED"
+        },
+        {
+          "number": 3,
+          "color": "BLUE"
+        },
+        {
+          "number": 4,
+          "color": "RED"
+        },
+        {
+          "number": 5,
+          "color": "GREEN"
+        },
+        {
+          "number": 6,
+          "color": "BLUE"
+        },
+        {
+          "number": 7,
+          "color": "RED"
+        },
+        {
+          "number": 8,
+          "color": "GREEN"
+        },
+        {
+          "number": 9,
+          "color": "YELLOW"
+        }
+      ]
+    },
+    {
+      "name": "D",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "BLUE"
+        },
+        {
+          "number": 2,
+          "color": "BLUE"
+        },
+        {
+          "number": 3,
+          "color": "BLUE"
+        },
+        {
+          "number": 4,
+          "color": "BLUE"
+        },
+        {
+          "number": 5,
+          "color": "BLUE"
+        },
+        {
+          "number": 6,
+          "color": "BLUE"
+        },
+        {
+          "number": 7,
+          "color": "RED"
+        },
+        {
+          "number": 8,
+          "color": "RED"
+        },
+        {
+          "number": 9,
+          "color": "YELLOW"
+        }
+      ]
+    },
+    {
+      "name": "E",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "GREEN"
+        },
+        {
+          "number": 2,
+          "color": "GREEN"
+        },
+        {
+          "number": 3,
+          "color": "BLUE"
+        },
+        {
+          "number": 4,
+          "color": "RED"
+        },
+        {
+          "number": 5,
+          "color": "YELLOW"
+        },
+        {
+          "number": 6,
+          "color": "YELLOW"
+        },
+        {
+          "number": 7,
+          "color": "GREEN"
+        },
+        {
+          "number": 8,
+          "color": "GREEN"
+        },
+        {
+          "number": 9,
+          "color": "YELLOW"
+        }
+      ]
+    },
+    {
+      "name": "F",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "BLUE"
+        },
+        {
+          "number": 2,
+          "color": "BLUE"
+        },
+        {
+          "number": 3,
+          "color": "GREEN"
+        },
+        {
+          "number": 4,
+          "color": "RED"
+        },
+        {
+          "number": 5,
+          "color": "GREEN"
+        },
+        {
+          "number": 6,
+          "color": "GREEN"
+        },
+        {
+          "number": 7,
+          "color": "BLUE"
+        },
+        {
+          "number": 8,
+          "color": "GREEN"
+        },
+        {
+          "number": 9,
+          "color": "GREEN"
+        }
+      ]
+    },
+    {
+      "name": "G",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "GREEN"
+        },
+        {
+          "number": 2,
+          "color": "GREEN"
+        },
+        {
+          "number": 3,
+          "color": "GREEN"
+        },
+        {
+          "number": 4,
+          "color": "GREEN"
+        },
+        {
+          "number": 5,
+          "color": "YELLOW"
+        },
+        {
+          "number": 6,
+          "color": "GREEN"
+        },
+        {
+          "number": 7,
+          "color": "GREEN"
+        },
+        {
+          "number": 8,
+          "color": "YELLOW"
+        },
+        {
+          "number": 9,
+          "color": "YELLOW"
+        }
+      ]
+    },
+    {
+      "name": "H",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "YELLOW"
+        },
+        {
+          "number": 2,
+          "color": "YELLOW"
+        },
+        {
+          "number": 3,
+          "color": "YELLOW"
+        },
+        {
+          "number": 4,
+          "color": "YELLOW"
+        },
+        {
+          "number": 5,
+          "color": "GREEN"
+        },
+        {
+          "number": 6,
+          "color": "GREEN"
+        },
+        {
+          "number": 7,
+          "color": "YELLOW"
+        },
+        {
+          "number": 8,
+          "color": "YELLOW"
+        },
+        {
+          "number": 9,
+          "color": "BLUE"
+        }
+      ]
+    },
+    {
+      "name": "K",
+      "nodes":  [
+        {
+          "number": 1,
+          "color": "YELLOW"
+        },
+        {
+          "number": 2,
+          "color": "RED"
+        },
+        {
+          "number": 3,
+          "color": "YELLOW"
+        },
+        {
+          "number": 4,
+          "color": "YELLOW"
+        },
+        {
+          "number": 5,
+          "color": "GREEN"
+        },
+        {
+          "number": 6,
+          "color": "RED"
+        },
+        {
+          "number": 7,
+          "color": "YELLOW"
+        },
+        {
+          "number": 8,
+          "color": "BLUE"
+        },
+        {
+          "number": 9,
+          "color": "RED"
+        }
+      ]
+    }
+  ],
+  "outerconnections": [
+    {
+      "firstsystem": "A",
+      "secondsystem": "B"
+    },
+    {
+      "firstsystem": "A",
+      "secondsystem": "C"
+    },
+    {
+      "firstsystem": "A",
+      "secondsystem": "D"
+    },
+    {
+      "firstsystem": "B",
+      "secondsystem": "D"
+    },
+    {
+      "firstsystem": "B",
+      "secondsystem": "F"
+    },
+    {
+      "firstsystem": "B",
+      "secondsystem": "K"
+    },
+    {
+      "firstsystem": "C",
+      "secondsystem": "D"
+    },
+    {
+      "firstsystem": "C",
+      "secondsystem": "E"
+    },
+    {
+      "firstsystem": "D",
+      "secondsystem": "F"
+    },
+    {
+      "firstsystem": "E",
+      "secondsystem": "F"
+    },
+    {
+      "firstsystem": "E",
+      "secondsystem": "G"
+    },
+    {
+      "firstsystem": "F",
+      "secondsystem": "H"
+    },
+    {
+      "firstsystem": "G",
+      "secondsystem": "H"
+    },
+    {
+      "firstsystem": "H",
+      "secondsystem": "K"
+    }
+  ],
+  "innerconnections": [
+    {
+      "solarsystem": "A",
+      "firstnode": 1,
+      "secondnode": 2
+    },
+    {
+      "solarsystem": "A",
+      "firstnode": 1,
+      "secondnode": 4
+    },
+    {
+      "solarsystem": "A",
+      "firstnode": 3,
+      "secondnode": 6
+    },
+    {
+      "solarsystem": "A",
+      "firstnode": 6,
+      "secondnode": 9
+    },
+    {
+      "solarsystem": "A",
+      "firstnode": 7,
+      "secondnode": 8
+    },
+    {
+      "solarsystem": "B",
+      "firstnode": 1,
+      "secondnode": 2
+    },
+    {
+      "solarsystem": "B",
+      "firstnode": 5,
+      "secondnode": 6
+    },
+    {
+      "solarsystem": "C",
+      "firstnode": 1,
+      "secondnode": 2
+    },
+    {
+      "solarsystem": "C",
+      "firstnode": 1,
+      "secondnode": 4
+    },
+    {
+      "solarsystem": "C",
+      "firstnode": 2,
+      "secondnode": 3
+    },
+    {
+      "solarsystem": "C",
+      "firstnode": 4,
+      "secondnode": 7
+    },
+    {
+      "solarsystem": "C",
+      "firstnode": 5,
+      "secondnode": 6
+    },
+    {
+      "solarsystem": "C",
+      "firstnode": 5,
+      "secondnode": 8
+    },
+    {
+      "solarsystem": "D",
+      "firstnode": 1,
+      "secondnode": 4
+    },
+    {
+      "solarsystem": "D",
+      "firstnode": 2,
+      "secondnode": 3
+    },
+    {
+      "solarsystem": "E",
+      "firstnode": 1,
+      "secondnode": 4
+    },
+    {
+      "solarsystem": "E",
+      "firstnode": 2,
+      "secondnode": 3
+    },
+    {
+      "solarsystem": "E",
+      "firstnode": 5,
+      "secondnode": 6
+    },
+    {
+      "solarsystem": "E",
+      "firstnode": 7,
+      "secondnode": 8
+    },
+    {
+      "solarsystem": "E",
+      "firstnode": 6,
+      "secondnode": 9
+    },
+    {
+      "solarsystem": "F",
+      "firstnode": 1,
+      "secondnode": 2
+    },
+    {
+      "solarsystem": "F",
+      "firstnode": 2,
+      "secondnode": 3
+    },
+    {
+      "solarsystem": "F",
+      "firstnode": 3,
+      "secondnode": 6
+    },
+    {
+      "solarsystem": "F",
+      "firstnode": 6,
+      "secondnode": 9
+    },
+    {
+      "solarsystem": "F",
+      "firstnode": 7,
+      "secondnode": 8
+    },
+    {
+      "solarsystem": "G",
+      "firstnode": 2,
+      "secondnode": 3
+    },
+    {
+      "solarsystem": "G",
+      "firstnode": 4,
+      "secondnode": 5
+    },
+    {
+      "solarsystem": "G",
+      "firstnode": 8,
+      "secondnode": 9
+    },
+    {
+      "solarsystem": "H",
+      "firstnode": 1,
+      "secondnode": 2
+    },
+    {
+      "solarsystem": "H",
+      "firstnode": 2,
+      "secondnode": 3
+    },
+    {
+      "solarsystem": "H",
+      "firstnode": 4,
+      "secondnode": 7
+    },
+    {
+      "solarsystem": "H",
+      "firstnode": 5,
+      "secondnode": 6
+    },
+    {
+      "solarsystem": "H",
+      "firstnode": 8,
+      "secondnode": 9
+    },
+    {
+      "solarsystem": "K",
+      "firstnode": 1,
+      "secondnode": 4
+    },
+    {
+      "solarsystem": "K",
+      "firstnode": 4,
+      "secondnode": 7
+    },
+    {
+      "solarsystem": "K",
+      "firstnode": 7,
+      "secondnode": 8
+    },
+    {
+      "solarsystem": "K",
+      "firstnode": 8,
+      "secondnode": 9
+    }
+  ]
+}
