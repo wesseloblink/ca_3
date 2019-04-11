@@ -2,6 +2,7 @@ import javax.xml.crypto.Data;
 import java.util.*;
 
 public class OuterGraph {
+
     private Map<String, InnerGraph> innerGraphMap;
     private List<OuterEdge> outerEdgeList;
 
@@ -24,22 +25,26 @@ public class OuterGraph {
         Set<Node> visited = new HashSet<>();
         LinkedList<Node> result = dfs(startNode, targetNode, visited);
 
-        System.out.println("It took " + result.size() + " steps to find the target planet.");
-        System.out.println("Path walked:");
+        if(result.size() > 0) {
+            System.out.println("It took " + result.size() + " steps to find the target planet.");
+            System.out.println("Path walked:");
 
-        for (int i = 0; i < result.size(); i++) {
-            // Loop through result (list of nodes)
-            Node node = result.get(i);
+            for (int i = 0; i < result.size(); i++) {
+                // Loop through result (list of nodes)
+                Node node = result.get(i);
 
-            if (i== 0 && i == result.size() -1 ) {
-                System.out.println(node.getInnerGraph().getName() + node.getNumber() + " (start and finish)");
-            } else if (i == 0) {
-                System.out.println(node.getInnerGraph().getName() + node.getNumber() + " (start)");
-            } else if (i == result.size() - 1) {
-                System.out.println(node.getInnerGraph().getName() + node.getNumber() + " (finish)");
-            } else {
-                System.out.println(node.getInnerGraph().getName() + node.getNumber());
+                if (i== 0 && i == result.size() -1 ) {
+                    System.out.println(node.getInnerGraph().getName() + node.getNumber() + " (start and finish)");
+                } else if (i == 0) {
+                    System.out.println(node.getInnerGraph().getName() + node.getNumber() + " (start)");
+                } else if (i == result.size() - 1) {
+                    System.out.println(node.getInnerGraph().getName() + node.getNumber() + " (finish)");
+                } else {
+                    System.out.println(node.getInnerGraph().getName() + node.getNumber());
+                }
             }
+        } else {
+            System.out.println("No path found to the target planet.");
         }
     }
 
@@ -65,10 +70,12 @@ public class OuterGraph {
             List<Node> neighbors = getNeighbors(startNode, targetNode);
             for (Node neighbor : neighbors) {
                 if (!visited.contains(neighbor)) {
+                    // If we have not visited the neighbor before
+                    // Do a recursive call to this method on the neighbor
                     solution = dfs(neighbor, targetNode, visited);
 
                     if (solution.size() > 0) {
-                        // If solution is not empty
+                        // If we found a route
                         solution.addFirst(startNode);
                         return solution;
                     }
@@ -128,8 +135,10 @@ public class OuterGraph {
         }
 
         if (neighbors.contains(targetNode)) {
+            // If the target node is found
             ArrayList<Node> finalNeighbors = new ArrayList<>();
             finalNeighbors.add(targetNode);
+
             return finalNeighbors;
         }
         return neighbors;
@@ -151,10 +160,6 @@ public class OuterGraph {
 
         for (InnerGraph innerGraph : connectedGraphs) {
             // Loop through the list of InnerGraphs
-
-            // Keep searching in each InnerGraph unless we confirmed we need it or we're through it
-            boolean keepSearching = true;
-
             if (innerGraph.getNodeByNumber(startNodeNumber).getColor().equals(startNodeColor)) {
                 innerGraphMap.put(innerGraph.getName(), innerGraph);
             }
@@ -209,4 +214,6 @@ public class OuterGraph {
     public List<OuterEdge> getOuterEdgeList() {
         return outerEdgeList;
     }
+
+    // @enduml
 }

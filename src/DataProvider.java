@@ -7,8 +7,15 @@ import java.io.InputStream;
 public class DataProvider {
 
     public DataProvider() {
+        // Default constructor
     }
 
+    /**
+     * Read data from json file and instantiate objects accordingly
+     * @param outerGraph Instance of the outerGraph class, to be updated with objects
+     * @param fileName   The file (e.g. input.json) to be used
+     * @throws NullPointerException Thrown in case of incorrect or missing file
+     */
     public void readFromFile(OuterGraph outerGraph, String fileName) throws NullPointerException {
         // Get JSON file
         InputStream is = getClass().getResourceAsStream(fileName);
@@ -72,7 +79,6 @@ public class DataProvider {
 
     /**
      * Create InnerGraph object from supplied resources
-     *
      * @param solarSystem The SolarSystem to base it on
      * @param nodes       The nodes to fill it with
      * @return InnerGraph object
@@ -104,7 +110,6 @@ public class DataProvider {
 
     /**
      * Return color object for node
-     *
      * @param nodeColorString String to check
      * @return Color object
      */

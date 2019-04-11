@@ -15,24 +15,24 @@ public class InnerGraph {
         innerEdgeList = new ArrayList<>();
     }
 
-    /**
-     * Return inner edges containing specified node
-     *
-     * @param node The node to search for
-     * @return A list of InnerEdges
-     */
-    public List<InnerEdge> getInnerEdgesForNode(Node node) {
-        List<InnerEdge> innerEdgesForNode = new ArrayList<>();
-
-        for (InnerEdge innerEdge : innerEdgeList) {
-            if (innerEdge.getNode1().equals(node)) {
-                innerEdgesForNode.add(innerEdge);
-            } else if (innerEdge.getNode2().equals(node)) {
-                innerEdgesForNode.add(innerEdge);
-            }
-        }
-        return innerEdgesForNode;
-    }
+//    /**
+//     * Return inner edges containing specified node
+//     *
+//     * @param node The node to search for
+//     * @return A list of InnerEdges
+//     */
+//    public List<InnerEdge> getInnerEdgesForNode(Node node) {
+//        List<InnerEdge> innerEdgesForNode = new ArrayList<>();
+//
+//        for (InnerEdge innerEdge : innerEdgeList) {
+//            if (innerEdge.getNode1().equals(node)) {
+//                innerEdgesForNode.add(innerEdge);
+//            } else if (innerEdge.getNode2().equals(node)) {
+//                innerEdgesForNode.add(innerEdge);
+//            }
+//        }
+//        return innerEdgesForNode;
+//    }
 
     public void addInnerEdge(Node firstNode, Node secondNode) {
         InnerEdge innerEdge = new InnerEdge(firstNode, secondNode);
