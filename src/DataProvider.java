@@ -87,16 +87,15 @@ public class DataProvider {
         // Create InnerGraph object instance of solarSystem
         InnerGraph innerGraph = new InnerGraph(solarSystem.getString("name"));
 
-        for (int j = 0; j < nodes.length(); j++) {
+        for (int i = 0; i < nodes.length(); i++) {
             // For each node in solarSystem
 
             // Create JSONObject object instance of node
-            JSONObject node = nodes.getJSONObject(j);
+            JSONObject node = nodes.getJSONObject(i);
 
             // Instantiate variables to save later
             int nodeNumber = node.getInt("number");
             String nodeStringColor = node.getString("color");
-            Color nodeColor = null;
 
             // Create Node object instance of node
             Node nodeToInsert = new Node(nodeNumber, getNodeColor(nodeStringColor), innerGraph);
@@ -104,7 +103,6 @@ public class DataProvider {
             // Add the node to the innerGraph
             innerGraph.addNode(nodeToInsert);
         }
-
         return innerGraph;
     }
 
@@ -130,7 +128,6 @@ public class DataProvider {
                 nodeColor = Color.YELLOW;
                 break;
         }
-
         return nodeColor;
     }
 }
